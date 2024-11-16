@@ -16,8 +16,8 @@ public:
     string get_material(){
         return nombre_material;
     }
-    void set_material(string nombre_materia_){
-        nombre_material=nombre_materia_;
+    void set_material(string nombre_material_){
+        nombre_material=nombre_material_;
 
     }
     void imprimir_lista(){
@@ -42,10 +42,16 @@ public:
         precio_final=0;
 
     }
+    string get_madera(){
+        return nombre;
+    }
+    void set_madera(string nombre_){
+        nombre=nombre_;
+    }
     void aumenta(float aum){
         cantidad += aum;
     }
-    int precio_ffinal(){
+    float precio_ffinal(){
         precio_final=cantidad*precio;
         return precio_final;
     }
@@ -81,10 +87,16 @@ public:
         precio_final=0;
 
     }
+    string get_piedra(){
+        return nombre;
+    }
+    void set_piedra(string nombre_){
+        nombre=nombre_;
+    }
     void aumenta(float aum){
         cantidad += aum;
     }
-    int precio_ffinal(){
+    float precio_ffinal(){
         precio_final=cantidad*precio;
         return precio_final;
     }
@@ -124,7 +136,13 @@ public:
     void aumenta(float aum){
         cantidad += aum;
     }
-    int precio_ffinal(){
+    string get_ladrillo(){
+        return nombre;
+    }
+    void set_ladrillo(string nombre_){
+        nombre=nombre_;
+    }
+    float precio_ffinal(){
         precio_final=cantidad*precio;
         return precio_final;
     }
