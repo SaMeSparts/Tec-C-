@@ -6,45 +6,39 @@ using namespace std;
 
 int main()
 {
-    Madera uno;
-    uno.aumenta(1);
-    uno.imprime_datos();
-    Madera dos;
-    dos.aumenta(2);
-    dos.imprime_datos();
-    Madera tres;
-    tres.aumenta(3);
-    tres.imprime_datos();
-    Madera cuatro;
-    cuatro.aumenta(4);
-    cuatro.imprime_datos();
+    Material imprime;
+    imprime.imprimir_lista();
+    int a;
+    cout << "¿Que material quiere?\n(1:Madera, 2:Piedra, 3:Ladrillo)";
+    cin >> a;
+    if(a==1){
+        Madera opcion;
+        int cantidad_madera;
+        cout << "¿Cuanta madera quiere?";
+        cin >> cantidad_madera;
+        opcion.aumenta(cantidad_madera);
+        opcion.imprime_datos();
+    }
+    else if (a==2)
+    {
+        Piedra opcion;
+        int cantidad_piedra;
+        cout << "¿Cuanta piedra quiere?";
+        cin >> cantidad_piedra;
+        opcion.aumenta(cantidad_piedra);
+        opcion.imprime_datos();
+    }
+    else if (a==3)
+    {
+        Ladrillo opcion;
+        int cantidad_ladrillo;
+        cout << "¿Cuanta piedra quiere?";
+        cin >> cantidad_ladrillo;
+        opcion.aumenta(cantidad_ladrillo);
+        opcion.imprime_datos();
+    }
     
-    Piedra unos;
-    unos.aumenta(1);
-    unos.imprime_datos();
-    Piedra doss;
-    doss.aumenta(2);
-    doss.imprime_datos();
-    Piedra tress;
-    tress.aumenta(3);
-    tress.imprime_datos();
-    Piedra cuatros;
-    cuatros.aumenta(4);
-    cuatros.imprime_datos();
-
-    Ladrillo unoss;
-    unoss.aumenta(1);
-    unoss.imprime_datos();
-    Ladrillo dosss;
-    dosss.aumenta(2);
-    dosss.imprime_datos();
-    Ladrillo tresss;
-    tresss.aumenta(3);
-    tresss.imprime_datos();
-    Ladrillo cuatrosss;
-    cuatrosss.aumenta(4);
-    cuatrosss.imprime_datos();
-    return 0;
+    
 }
 
 #endif MADERA.H
