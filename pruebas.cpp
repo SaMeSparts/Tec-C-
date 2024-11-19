@@ -180,14 +180,14 @@ int main()
         Clasificacion_Madera tipo;
         opcion.set_material("Madera");
         int tipo_madera;
-        cout << "¿Que tipo de madera quiere? (1: Blanda, 2: Dura)";
+        cout << "¿Que tipo de madera quiere? (1: Blanda, 2: Dura)\n";
         cin >> tipo_madera;
 
         if (tipo_madera==1){
             tipo.set_clasificacion("Blanda");
             tipo.imprimir_lista_madera_blanda();
             int madera_mat;
-            cout << "¿que madera quiere?";
+            cout << "¿que madera quiere?\n";
             cin >> madera_mat; 
             if (madera_mat==1)
             {
@@ -218,7 +218,7 @@ int main()
             tipo.set_clasificacion("Dura");
             tipo.imprimir_lista_madera_blanda();
             int madera_mat;
-            cout << "¿que madera quiere?";
+            cout << "¿que madera quiere?\n";
             cin >> madera_mat; 
             if (madera_mat==1)
             {
@@ -291,7 +291,7 @@ int main()
             textura.set_textura("Sedimentaria");
             textura.imprimir_lista_piedra_sedimentaria();
             int piedra_tex;
-            cout << "¿que piedra quiere?";
+            cout << "¿que piedra quiere?\n";
             cin >> piedra_tex; 
             if (piedra_tex==1)
             {
