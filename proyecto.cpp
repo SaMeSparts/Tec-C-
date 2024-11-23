@@ -1,13 +1,21 @@
 #include <iostream>
-#include "madera.h"
+#include "material.h"
+#include "pago.h"
 using namespace std;
-#ifndef MADERA.H
+#ifndef MATERIAL.H
+#ifndef PAGO.H
 
 
 int main()
 {
+    Pago pagar;
+    int p;
+    cout << "Cuanto dinero quiere agregar a su saldo:\n";
+    cin >> p;
+    pagar.añadir_saldo(p);
+    cout << "Se añadio: " << p << "$" << endl;
+
     Material imprime;
-    imprime.imprimir_lista();
     int a;
     cout << "¿Que material quiere?\n(1:Madera, 2:Piedra)\n ";
     cin >> a;
@@ -23,7 +31,7 @@ int main()
             tipo.set_clasificacion("Blanda");
             tipo.imprimir_lista_madera_blanda();
             int madera_mat;
-            cout << "¿que madera quiere?\n";
+            cout << "¿Que madera quiere?\n";
             cin >> madera_mat; 
             if (madera_mat==1)
             {
@@ -35,6 +43,8 @@ int main()
                 opcion.set_precio(400);
                 opcion.aumenta(cantidad_madera);
                 opcion.imprime_datos_madera();
+                pagar.set_precio_pagar(opcion.precio_ffinal());
+                cout << "Se pagaron: " << opcion.precio_ffinal() << ", su saldo es de: " << pagar.pagar_precio() << endl; 
             }
             else if (madera_mat==2)
             {
@@ -46,6 +56,8 @@ int main()
                 opcion.set_precio(400);
                 opcion.aumenta(cantidad_madera);
                 opcion.imprime_datos_madera();
+                pagar.set_precio_pagar(opcion.precio_ffinal());
+                cout << "Se pagaron: " << opcion.precio_ffinal() << ", su saldo es de: " << pagar.pagar_precio() << endl; 
             }
             
         }
@@ -54,7 +66,7 @@ int main()
             tipo.set_clasificacion("Dura");
             tipo.imprimir_lista_madera_blanda();
             int madera_mat;
-            cout << "¿que madera quiere?\n";
+            cout << "¿Que madera quiere?\n";
             cin >> madera_mat; 
             if (madera_mat==1)
             {
@@ -66,6 +78,8 @@ int main()
                 opcion.set_precio(400);
                 opcion.aumenta(cantidad_madera);
                 opcion.imprime_datos_madera();
+                pagar.set_precio_pagar(opcion.precio_ffinal());
+                cout << "Se pagaron: " << opcion.precio_ffinal() << ", su saldo es de: " << pagar.pagar_precio() << endl; 
             }
             else if (madera_mat==2)
             {
@@ -77,6 +91,8 @@ int main()
                 opcion.set_precio(400);
                 opcion.aumenta(cantidad_madera);
                 opcion.imprime_datos_madera();
+                pagar.set_precio_pagar(opcion.precio_ffinal());
+                cout << "Se pagaron: " << opcion.precio_ffinal() << ", su saldo es de: " << pagar.pagar_precio() << endl; 
             }
         }
         
@@ -108,6 +124,8 @@ int main()
                 opcion.set_precio(50);
                 opcion.aumenta(cantidad_piedra);
                 opcion.imprime_datos_piedra();
+                pagar.set_precio_pagar(opcion.precio_ffinal());
+                cout << "Se pagaron: " << opcion.precio_ffinal() << ", su saldo es de: " << pagar.pagar_precio() << endl;  
             }
             else if (piedra_tex==2)
             {
@@ -119,6 +137,8 @@ int main()
                 opcion.set_precio(50);
                 opcion.aumenta(cantidad_piedra);
                 opcion.imprime_datos_piedra();
+                pagar.set_precio_pagar(opcion.precio_ffinal());
+                cout << "Se pagaron: " << opcion.precio_ffinal() << ", su saldo es de: " << pagar.pagar_precio() << endl; 
             }
             
         }
@@ -139,6 +159,8 @@ int main()
                 opcion.set_precio(50);
                 opcion.aumenta(cantidad_piedra);
                 opcion.imprime_datos_madera();
+                pagar.set_precio_pagar(opcion.precio_ffinal());
+                cout << "Se pagaron: " << opcion.precio_ffinal() << ", su saldo es de: " << pagar.pagar_precio() << endl; 
             }
             else if (piedra_tex==2)
             {
@@ -150,6 +172,8 @@ int main()
                 opcion.set_precio(50);
                 opcion.aumenta(cantidad_piedra);
                 opcion.imprime_datos_madera();
+                pagar.set_precio_pagar(opcion.precio_ffinal());
+                cout << "Se pagaron: " << opcion.precio_ffinal() << ", su saldo es de: " << pagar.pagar_precio() << endl; 
             }
         }
 
@@ -158,4 +182,5 @@ int main()
     
 }
 
-#endif MADERA.H
+#endif MATERIAL.H
+#endif PAGO.H
