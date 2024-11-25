@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 #include "madera.h"
 #include "piedra.h"
@@ -79,6 +80,44 @@ public:
         cout << "---------------" << endl;
     }
 
+};
+
+class lista_material
+{
+private:
+    vector<Clasificacion_Madera> maderas;
+    vector<Clasificacion_Piedra> piedras;
+public:
+    lista_material(){
+
+
+    }
+
+
+    vector<Clasificacion_Madera> get_maderas(){
+        return maderas;
+    }
+    vector<Clasificacion_Piedra> get_piedras(){
+        return piedras;
+    }
+
+
+    Clasificacion_Madera agregar_madera(string madera, string clasificacion){
+        Clasificacion_Madera nuevo= Clasificacion_Madera(madera,clasificacion);
+        maderas.push_back(nuevo);
+        return nuevo;
+    }
+    void eliminar_madera(int indice){
+        maderas.erase(maderas.begin() + indice);
+    }
+    Clasificacion_Piedra agregar_piedra(string piedra, string textura){
+        Clasificacion_Piedra nuevo= Clasificacion_Piedra(piedra,textura);
+        piedras.push_back(nuevo);
+        return nuevo;
+    }
+    void eliminar_piedra(int indice){
+        piedras.erase(piedras.begin() + indice);
+    }
 };
 
 #endif MADERA.H
