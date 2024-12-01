@@ -39,16 +39,15 @@ public:
     }
     void imprime_datos(){
         cout << "---------------" << endl;
-        cout << "Nombre: " << nombre_material << endl;
+        cout << "Nombre: " << get_material() << endl;
         cout << "Tipo: " << get_textura() << endl;
         cout << "Piedra: " << get_piedra() << endl;
-        cout << "Precio: " << precio << endl;
-        cout << "Cantidad: " << cantidad << endl;
+        cout << "Precio: " << get_precio() << endl;
+        cout << "Cantidad: " << get_cantidad() << endl;
         cout << "---------------" << endl;
         cout << "Precio Final: " << precio_ffinal() << endl;
         cout << "---------------" << endl;
     }
     
 };
-
 #endif PIEDRA.H

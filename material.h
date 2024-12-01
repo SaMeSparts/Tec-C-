@@ -25,6 +25,12 @@ public:
     string get_material(){
         return nombre_material;
     }
+    float get_precio(){
+        return precio;
+    }
+    float get_cantidad(){
+        return cantidad;
+    }
     void set_material(string nombre_material_){
         nombre_material=nombre_material_;
 
@@ -46,7 +52,6 @@ public:
     
 
 };
-
 
 
 #endif MATERIAL.H

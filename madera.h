@@ -6,7 +6,6 @@ using namespace std;
 #define MATERIAL.H
 #define MADERA.H
 
-
 class Madera: public Material {
 private:
     string clasificacion;
@@ -14,7 +13,7 @@ private:
 
 
 public:
-    Madera(){
+    Madera(): Material(){
         clasificacion="Desconocida";
         madera="Desconocido";
     }
@@ -39,11 +38,11 @@ public:
     
     void imprime_datos(){
         cout << "---------------" << endl;
-        cout << "Nombre: " << nombre_material << endl;
+        cout << "Nombre: " << get_material() << endl;
         cout << "Tipo: " << get_clasificacion() << endl;
         cout << "Madera: " << get_madera() << endl;
-        cout << "Precio: " << precio << endl;
-        cout << "Cantidad: " << cantidad << endl;
+        cout << "Precio: " << get_precio() << endl;
+        cout << "Cantidad: " << get_cantidad() << endl;
         cout << "---------------" << endl;
         cout << "Precio Final: " << precio_ffinal() << endl;
         cout << "---------------" << endl;
