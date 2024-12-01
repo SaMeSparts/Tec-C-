@@ -1,25 +1,25 @@
 #include <iostream>
+#include <vector>
 using namespace std;
+#include "material.h"
+#ifndef MADERA.H
+#define MATERIAL.H
+#define MADERA.H
 
-class Clasificacion_Madera
-{
+
+class Madera: public Material {
 private:
     string clasificacion;
-    string lista_madera_blanda;
-    string lista_madera_dura;
     string madera;
 
 
 public:
-    Clasificacion_Madera(){
+    Madera(){
         clasificacion="Desconocida";
         madera="Desconocido";
-        lista_madera_blanda="1:Pino, 2:Cedro";
-        lista_madera_dura="1:Roble, 2:Cerezo";
-
     }
 
-    Clasificacion_Madera(string madera_, string clasificacion_){
+    Madera(string madera_, string clasificacion_,string nombre_material_,float precio_):Material(nombre_material_,precio_){
         madera=madera_;
         clasificacion=clasificacion_;
         
@@ -36,14 +36,21 @@ public:
     void set_madera(string madera_){
         madera=madera_;
     }
-    void imprimir_lista_madera_blanda(){
-        cout << lista_madera_blanda << endl;
+    
+    void imprime_datos(){
+        cout << "---------------" << endl;
+        cout << "Nombre: " << nombre_material << endl;
+        cout << "Tipo: " << get_clasificacion() << endl;
+        cout << "Madera: " << get_madera() << endl;
+        cout << "Precio: " << precio << endl;
+        cout << "Cantidad: " << cantidad << endl;
+        cout << "---------------" << endl;
+        cout << "Precio Final: " << precio_ffinal() << endl;
+        cout << "---------------" << endl;
     }
-    void imprimir_lista_madera_dura(){
-        cout << lista_madera_dura << endl;
-    }
+    
     
 };
 
-
+#endif MADERA.H
 

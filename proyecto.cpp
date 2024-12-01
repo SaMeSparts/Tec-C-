@@ -1,17 +1,17 @@
 #include <iostream>
 #include "material.h"
 #include "pago.h"
+#include "lista.h"
 using namespace std;
-#ifndef MATERIAL.H
-#ifndef PAGO.H
-
-
+#define LISTA_MATERIAL.H
+#define MATERIAL.H
+#define PAGO.H
 
 
 int main()
 {
     int con;
-    cout << "Cuenta 1: nomral, 2. Admin:\n";
+    cout << "Cuenta 1: Cliente, 2. Admin:\n";
     cin >> con;
     if(con==1){
 
@@ -29,7 +29,8 @@ int main()
         cin >> a;
         if(a==1){
             Material opcion;
-            Clasificacion_Madera tipo;
+            Madera tipo;
+            lista_material listas;
             opcion.set_material("Madera");
             int tipo_madera;
             cout << "¿Que tipo de madera quiere? (1: Blanda, 2: Dura)\n";
@@ -37,20 +38,19 @@ int main()
 
             if (tipo_madera==1){
                 tipo.set_clasificacion("Blanda");
-                tipo.imprimir_lista_madera_blanda();
+                listas.imprimir_madera_blanda();
                 int madera_mat;
                 cout << "¿Que madera quiere?\n";
                 cin >> madera_mat; 
                 if (madera_mat==1)
                 {
                     tipo.set_madera("Pino");
-                    opcion.set_tipo(tipo);
                     int cantidad_madera;
                     cout << "¿Cuanta madera quiere?\n";
                     cin >> cantidad_madera;
                     opcion.set_precio(400);
                     opcion.aumenta(cantidad_madera);
-                    opcion.imprime_datos_madera();
+                    tipo.imprime_datos();
                     pagar.set_precio_pagar(opcion.precio_ffinal());
                     cout << "Se pagaron: $" << opcion.precio_ffinal() << ", su saldo es de: $" << pagar.pagar_precio() << endl; 
                     cout << "---------------" << endl;
@@ -58,13 +58,12 @@ int main()
                 else if (madera_mat==2)
                 {
                     tipo.set_madera("Cedro");
-                    opcion.set_tipo(tipo);
                     int cantidad_madera;
                     cout << "¿Cuanta madera quiere?\n";
                     cin >> cantidad_madera;
                     opcion.set_precio(400);
                     opcion.aumenta(cantidad_madera);
-                    opcion.imprime_datos_madera();
+                    tipo.imprime_datos();
                     pagar.set_precio_pagar(opcion.precio_ffinal());
                     cout << "Se pagaron: $" << opcion.precio_ffinal() << ", su saldo es de: $" << pagar.pagar_precio() << endl; 
                     cout << "---------------" << endl;
@@ -74,20 +73,19 @@ int main()
             else if (tipo_madera==2)
             {
                 tipo.set_clasificacion("Dura");
-                tipo.imprimir_lista_madera_blanda();
+                listas.imprimir_madera_dura();
                 int madera_mat;
                 cout << "¿Que madera quiere?\n";
                 cin >> madera_mat; 
                 if (madera_mat==1)
                 {
                     tipo.set_madera("Roble");
-                    opcion.set_tipo(tipo);
                     int cantidad_madera;
                     cout << "¿Cuanta madera quiere?\n";
                     cin >> cantidad_madera;
                     opcion.set_precio(400);
                     opcion.aumenta(cantidad_madera);
-                    opcion.imprime_datos_madera();
+                    tipo.imprime_datos();
                     pagar.set_precio_pagar(opcion.precio_ffinal());
                     cout << "Se pagaron: $" << opcion.precio_ffinal() << ", su saldo es de: $" << pagar.pagar_precio() << endl; 
                     cout << "---------------" << endl;
@@ -95,13 +93,12 @@ int main()
                 else if (madera_mat==2)
                 {
                     tipo.set_madera("Cerezo");
-                    opcion.set_tipo(tipo);
                     int cantidad_madera;
                     cout << "¿Cuanta madera quiere?\n";
                     cin >> cantidad_madera;
                     opcion.set_precio(400);
                     opcion.aumenta(cantidad_madera);
-                    opcion.imprime_datos_madera();
+                    tipo.imprime_datos();
                     pagar.set_precio_pagar(opcion.precio_ffinal());
                     cout << "Se pagaron: $" << opcion.precio_ffinal() << ", su saldo es de: $" << pagar.pagar_precio() << endl; 
                     cout << "---------------" << endl;
@@ -114,7 +111,8 @@ int main()
         else if (a==2)
         {
             Material opcion;
-            Clasificacion_Piedra textura;
+            Piedra textura;
+            lista_material listas;
             opcion.set_material("Piedra");
             int tipo_piedra;
             cout << "¿Que tipo de Piedra quiere? (1: Ignea, 2: Sedimentaria)\n";
@@ -122,20 +120,19 @@ int main()
 
             if (tipo_piedra==1){
                 textura.set_textura("Ignea");
-                textura.imprimir_lista_piedra_ignea();
+                listas.imprimir_piedra_ignea();
                 int piedra_tex;
                 cout << "¿Que piedra quiere?\n";
                 cin >> piedra_tex; 
                 if (piedra_tex==1)
                 {
                     textura.set_piedra("Granito");
-                    opcion.set_textura(textura);
                     int cantidad_piedra;
                     cout << "¿Cuanta piedra quiere?\n";
                     cin >> cantidad_piedra;
                     opcion.set_precio(50);
                     opcion.aumenta(cantidad_piedra);
-                    opcion.imprime_datos_piedra();
+                    textura.imprime_datos();
                     pagar.set_precio_pagar(opcion.precio_ffinal());
                     cout << "Se pagaron: $" << opcion.precio_ffinal() << ", su saldo es de: $" << pagar.pagar_precio() << endl;  
                     cout << "---------------" << endl;
@@ -143,13 +140,12 @@ int main()
                 else if (piedra_tex==2)
                 {
                     textura.set_piedra("Basalto");
-                    opcion.set_textura(textura);
                     int cantidad_piedra;
                     cout << "¿Cuanta piedra quiere?\n";
                     cin >> cantidad_piedra;
                     opcion.set_precio(50);
                     opcion.aumenta(cantidad_piedra);
-                    opcion.imprime_datos_piedra();
+                    textura.imprime_datos();
                     pagar.set_precio_pagar(opcion.precio_ffinal());
                     cout << "Se pagaron: $" << opcion.precio_ffinal() << ", su saldo es de: $" << pagar.pagar_precio() << endl; 
                     cout << "---------------" << endl;
@@ -159,20 +155,19 @@ int main()
             else if (tipo_piedra==2)
             {
                 textura.set_textura("Sedimentaria");
-                textura.imprimir_lista_piedra_sedimentaria();
+                listas.imprimir_piedra_sedimentaria();
                 int piedra_tex;
                 cout << "¿que piedra quiere?\n";
                 cin >> piedra_tex; 
                 if (piedra_tex==1)
                 {
                     textura.set_piedra("Arenisca");
-                    opcion.set_textura(textura);
                     int cantidad_piedra;
                     cout << "¿Cuanta piedra quiere?\n";
                     cin >> cantidad_piedra;
                     opcion.set_precio(50);
                     opcion.aumenta(cantidad_piedra);
-                    opcion.imprime_datos_madera();
+                    textura.imprime_datos();
                     pagar.set_precio_pagar(opcion.precio_ffinal());
                     cout << "Se pagaron: $" << opcion.precio_ffinal() << ", su saldo es de: $" << pagar.pagar_precio() << endl; 
                     cout << "---------------" << endl;
@@ -180,13 +175,12 @@ int main()
                 else if (piedra_tex==2)
                 {
                     textura.set_piedra("Caliza");
-                    opcion.set_textura(textura);
                     int cantidad_piedra;
                     cout << "¿Cuanta madera quiere?\n";
                     cin >> cantidad_piedra;
                     opcion.set_precio(50);
                     opcion.aumenta(cantidad_piedra);
-                    opcion.imprime_datos_madera();
+                    textura.imprime_datos();
                     pagar.set_precio_pagar(opcion.precio_ffinal());
                     cout << "Se pagaron: $" << opcion.precio_ffinal() << ", su saldo es de: $" << pagar.pagar_precio() << endl; 
                     cout << "---------------" << endl;
@@ -199,16 +193,15 @@ int main()
     {
         lista_material lista;
         string an;
-        cout << "escribe el nombre:";
+        cout << "escribe el nombre:\n";
         cin >> an;
-        string on;
-        cout << "escribe clasificacion";
-        cin >> on;
-        lista.agregar_madera(an,on);
+        Madera maderas_1=Madera(an, "blanda","Madera",400);
+        lista.agregar_madera(maderas_1);        
+        
     }
+    
+    
     
     
 }
 
-#endif MATERIAL.H
-#endif PAGO.H

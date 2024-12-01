@@ -1,25 +1,26 @@
 #include <iostream>
+#include <vector>
+#include <algorithm>
+#include "material.h"
 using namespace std;
+#ifndef PIEDRA.H
+#define MATERIAL.H
 
-class Clasificacion_Piedra
+class Piedra: public Material
 {
 private:
     string textura;
-    string lista_piedra_ignea;
-    string lista_piedra_sedimentaria;
     string piedra;
 
 
 public:
-    Clasificacion_Piedra(){
+    Piedra(): Material(){
         textura="Desconocida";
         piedra="Desconocido";
-        lista_piedra_ignea="1:Granito, 2:Basalto";
-        lista_piedra_sedimentaria="1:Arenisca, 2:Calisa";
 
     }
 
-    Clasificacion_Piedra(string piedra_, string textura_){
+    Piedra(string piedra_, string textura_,string nombre_material_,float precio_): Material(nombre_material_,precio_){
         piedra=piedra_;
         textura=textura_;
         
@@ -36,11 +37,18 @@ public:
     void set_piedra(string piedra_){
         piedra=piedra_;
     }
-    void imprimir_lista_piedra_ignea(){
-        cout << lista_piedra_ignea << endl;
-    }
-    void imprimir_lista_piedra_sedimentaria(){
-        cout << lista_piedra_sedimentaria << endl;
+    void imprime_datos(){
+        cout << "---------------" << endl;
+        cout << "Nombre: " << nombre_material << endl;
+        cout << "Tipo: " << get_textura() << endl;
+        cout << "Piedra: " << get_piedra() << endl;
+        cout << "Precio: " << precio << endl;
+        cout << "Cantidad: " << cantidad << endl;
+        cout << "---------------" << endl;
+        cout << "Precio Final: " << precio_ffinal() << endl;
+        cout << "---------------" << endl;
     }
     
 };
+
+#endif PIEDRA.H

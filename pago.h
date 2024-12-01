@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+#ifndef PAGO.H
 
 class Pago
 {
@@ -40,4 +41,4 @@ public:
         return pago_final;
     }
 };
-
+#endif PAGO.H
