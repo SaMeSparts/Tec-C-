@@ -201,8 +201,5 @@ int main()
         Madera maderas_1=Madera(an, "Blanda","Madera",400);
         listas.agregar_madera(maderas_1);        
         
-    }
-    
-    
-  
+    }  
 }   
